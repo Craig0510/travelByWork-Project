@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>後台-當前登入員工</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets3/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets3/css/noscript.css" /></noscript>
+    <!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <img src="images/logo.jpg" alt="LOGO" style="max-width: 100%; max-height: 100%;" />
+        </header>
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="adminAccount.html">當前登入</a></li>
+                <li><a href="addAdmin.html">新增員工</a></li>
+                <li><a href="adminFix.html">員工管理</a></li>
+                <li><a href="whatFix.html">公告管理</a></li>
+                <li><a href="helperFix.html">小幫手管理</a></li>
+                <li><a href="storeFix.html">商家管理</a></li>
+                <li><a href="shareFix.html">心得管理</a></li>
+                <li><a href="storeCVFix.html">職缺管理</a></li>
+                <li><a href="messageHelp.html">檢舉信管理</a></li>
+            </ul>
+        </nav>
+        <!-- Main -->
+        <div id="main" >
+            <!-- 內容 -->
+            <article id="addAdmin" class="post featured">
+                <header>
+                    <h2>當前登入員工資料</h2>
+                    <!-- 顯示當日日期 -->
+                    <span class="date" id="currentDateTime">April 25, 2017</span>
+                </header>
+                <div>
+                    <div class="col-6 col-12-medium">
+                        <div class="align-center ">
+                            <section>
+                                <form method="post" action="" id="login">
+                                    <div class="row.aln-center">
+                                        <div class="col-6 col-12-xsmall">
+                                            <input  type="text" name="adminmemberid" id="adminmemberid" value=""
+                                                placeholder="員工編號" required readonly /> <br>
+                                        </div>
+                                        <div class="col-6 col-12-xsmall">
+                                            <input  type="text" name="username" id="username" value=""
+                                                placeholder="員工暱稱" required readonly /> <br>
+                                        </div>
+                                        <div class="col-6 col-12-xsmall">
+                                            <input  type="text" name="name" id="name" value=""
+                                                placeholder="真實姓名" required readonly /> <br>
+                                        </div>
+                                        <div class="col-12 col-12-xsmall">
+                                            <input  type="text" name="account" id="account" value=""
+                                                placeholder="登入帳號" required readonly /> <br>
+                                        </div>
+										<div class="col-12 col-12-xsmall">
+                                            <input type="text" name="password" id="password" value=""
+                                                placeholder="登入密碼（可修改）" required readonly /> <br>
+                                        </div>
+                                        <div class="col-12 col-12-xsmall">
+                                            <input  type="text" name="mobile" id="mobile" value=""
+                                                placeholder="手機號碼" required readonly /> <br>
+                                        </div>
+                                        <div class="col-12 col-12-xsmall">
+                                            <input  type="text" name="createtime" id="createtime" value=""
+                                                placeholder="創建日期" readonly required /><br>
+                                        </div>
+                                    </div>
+                                </form>
+                                <button id="editButton">編輯</button>
+                                <button id="saveButton" style="display: none;">保存</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <!-- 登出帳號並且返回登入畫面 -->
+                <ul class="actions special">
+                    <li><a href="/clearSession" class="button large">登出帳號</a></li>
+                </ul>
+            </article>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // 編輯 button
+                    const editButton = document.getElementById("editButton");
+                    // 保存 button
+                    const saveButton = document.getElementById("saveButton");
+                    // 存入 fields
+                    const inputFields = document.querySelectorAll("input");
+
+                    // 編輯按鈕事件 
+                    editButton.addEventListener("click", function () {
+                        inputFields.forEach((field) => {
+                            if (field.id === "password" ) {           //|| field.id === "name"
+                                field.readOnly = false; // 確認
+                            } else {
+                                field.readOnly = true; //其他欄位鎖死
+                            }
+                        });
+
+                        editButton.style.display = "none";
+                        saveButton.style.display = "inline";
+                    });
+
+                    // 保存事件
+                    saveButton.addEventListener("click", function () {
+                        
+
+                        inputFields.forEach((field) => {
+                            field.readOnly = true; 
+                        });
+
+                        saveButton.style.display = "none";
+                        editButton.style.display = "inline";
+                    });
+                });
+            </script>
+            <!-- Copyright -->
+            <div id="copyright">
+                <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="assets3/js/jquery.min.js"></script>
+    <script src="assets3/js/jquery.scrollex.min.js"></script>
+    <script src="assets3/js/jquery.scrolly.min.js"></script>
+    <script src="assets3/js/browser.min.js"></script>
+    <script src="assets3/js/breakpoints.min.js"></script>
+    <script src="assets3/js/util.js"></script>
+    <script src="assets3/js/main.js"></script>
+    <script src="assets3/js/updateTime.js"></script>
+    <script src="assets3/js/adminUpdate.js"></script>
+	<script src="assets/js/adminGetSession.js"></script>
+</body>
+</html>

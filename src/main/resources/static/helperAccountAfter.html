@@ -1,0 +1,592 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>打工換宿趣-小幫手資料</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets1/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+
+		<style>
+			/* 更改資料欄位 */
+			.col-8 input,
+			.col-10 input {
+				width: 100%; /* 寬 */
+			}
+			
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#home" class="icon solid fa-home"><span>個人資料</span></a>
+						<a href="#work" class="icon solid fa-folder"><span>履歷</span></a>
+						<a href="#contact" class="icon solid fa-envelope"><span>已收藏店家</span></a>
+						<a href="#shareMe" class="icon fa-solid fa-heart"><span>分享心得</span></a>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+
+					<!-- Me -->
+						<article id="home" class="panel intro">
+							<header>
+								<h1>基本資料</h1>
+								<p>修改之後記得保存</p>
+								<!--<img src="https://i.imgur.com/kB34yEq.jpg" alt="烏龜" style="max-width: 100%; max-height: 100%;"/>-->
+								<img id="myphoto" alt="請上傳大頭貼" style="max-width: 100%; max-height: 100%;"/>
+							</header>
+							<form id="userForm" action="#" method="post">
+								<div>
+									<br>
+									<div class="row">
+										
+										<div class="col-3 col-12-medium">
+											<label for="helpermemberid">會員編號：</label>
+										</div>
+										<div class="col-8 col-12-medium">
+											<input type="text" name="helpermemberid" id="helpermemberid" value="" placeholder="會員編號" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="account">你的帳號：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="account" id="account" value="" placeholder="帳號" disabled/>
+										</div>
+
+
+										<div class="col-3 col-12-medium">
+											<label for="username">你的暱稱：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="username" id="username" value="" placeholder="暱稱(可修改)" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="name">你的真實姓名：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="name" id="name" value="" placeholder="真實姓名" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="birth">出生年月日：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="birth" id="birth" value="" placeholder="生日" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="sexual">你的性別：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="sexual" id="sexual" value="" placeholder="性別" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="country">你的國籍：</label>
+										</div>
+										<div class="col-7 col-12-medium">
+											<input type="text" name="country" id="country" value="" placeholder="國籍(可修改)" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="mobile">你的手機號碼：</label>
+										</div>
+										<div class="col-8 col-12-medium">
+											<input type="text" name="mobile" id="mobile" value="" placeholder="手機號碼(可修改)" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label>信箱：</label>
+										</div>
+										<div class="col-8 col-12-medium">
+											<input type="text" name="email" id="email" value="" placeholder="電子信箱" disabled/>
+										</div>
+
+										<div class="col-3 col-12-medium">
+											<label for="createtime">加入時間：</label>
+										</div>
+										<div class="col-8 col-12-medium">
+											<input type="text" name="createtime" id="createtime" value="" placeholder="創建時間" disabled/>
+										</div>
+										
+
+										
+										<br><br><br>
+									</div>
+								
+									<button id="editButton" type="button">修改基本資料</button>
+								
+									<button id="saveButton" type="button" style="display: none;">保存資料</button>
+									<br><br>
+								</div>
+							</form>
+							<button id="logout" type="button">登出</button>
+							
+
+						</article>
+
+						<script>
+
+							// 獲取編輯按鈕和保存按鈕
+							const editButton = document.getElementById('editButton');
+							const saveButton = document.getElementById('saveButton');
+
+							 // 獲取表單元素 輸入欄位
+							const form = document.getElementById('userForm');
+							const inputs = form.querySelectorAll('input');
+							
+							// 編輯輸入欄位 切換按鈕
+							function enableInputs() {
+								for (const input of inputs) {
+									const inputName = input.getAttribute('name');
+									// 排除特定的輸入欄位
+									if (inputName !== 'helpermemberid' && inputName !== 'email' 
+									&& inputName !== 'account' && inputName !== 'name'
+									&& inputName !== 'createtime') {
+										input.removeAttribute('disabled');
+									}
+								}
+								editButton.style.display = 'none';
+								saveButton.style.display = 'inline-block';
+							}
+
+							
+							// 鎖定輸入欄位 切換按鈕
+							function disableInputs() {
+								for (const input of inputs) {
+									input.setAttribute('disabled', 'true');
+								}
+								editButton.style.display = 'inline-block';
+								saveButton.style.display = 'none';
+							}
+							
+							// 監聽事件
+							editButton.addEventListener('click', enableInputs);
+							saveButton.addEventListener('click', disableInputs);
+							
+							// 初始
+							disableInputs();
+							</script>
+							
+						
+
+					<!-- Work -->
+					<article id="work" class="panel">
+						<header>
+							<h2>履歷</h2>
+							<p>前往外部連接上傳大頭貼及履歷<br>上傳完成將網址貼入欄位！</p>
+						</header>
+						<div>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<input type="text" id="helperphoto" name="helperphoto" placeholder="上傳大頭貼" />
+								</div>
+
+								<p> </p>
+
+								<a href="https://imgur.com/upload" target="_blank">
+									<button id="updatePhoto" type="button" style="max-width: 200px;">前往上傳大頭貼</button>
+								</a>									
+								
+
+								<div class="col-6 col-12-medium">
+									<input type="text" id="helpercvlink" name="helpercvlink" placeholder="上傳履歷" />
+								</div>
+
+								<p> </p>
+
+								<a href="https://www.mediafire.com/" target="_blank">
+									<button id="updateCV" type="button" style="max-width: 200px;">前往上傳履歷</button>
+								</a>									
+
+								<div class="col-6 col-12-medium">
+									<button id="editCV" type="button">修改履歷資料</button>
+									<button id="saveCV" type="button" style="display: none;">保存新增資料</button>
+								</div>
+
+							</div>
+						</div>
+					</article>
+					
+					<script>
+						$("#logout").click(logout)
+						$(document).ready(getSession)
+						$(document).ready(getGoogleSession)
+						$("#saveButton").click(update)
+						function getSession() {
+							$.ajax({
+								url: '/getSession',
+								type: 'get',
+								datatype: 'json',
+								success:setSession,
+								error: function (error) {
+									console.log(error)
+								}
+							})
+						}
+						function getGoogleSession() {
+							$.ajax({
+								url: '/getGoogleSession',
+								type: 'get',
+								datatype: 'json',
+								success:setSession,
+								error: function (error) {
+									console.log(error)
+								}
+							})
+						}
+						function setSession(data){
+							document.getElementById('helpermemberid').value=data.helperMember.helperMemberId;
+							document.getElementById('account').value=data.helperMember.account;
+							document.getElementById('username').value=data.helperMember.username;
+							document.getElementById('name').value=data.helperMember.name;
+							document.getElementById('birth').value=data.helperMember.birth;
+							document.getElementById('sexual').value=data.helperMember.sexual;
+							document.getElementById('email').value=data.helperMember.email;
+							document.getElementById('country').value=data.helperMember.country;
+							document.getElementById('mobile').value=data.helperMember.mobile;
+							document.getElementById('createtime').value=data.helperMember.createtime;
+
+							//心得分享用
+							document.getElementById('usernameAddForm').value=data.helperMember.username;
+							document.getElementById('memberIdAddForm').value=data.helperMember.helpermemberid;
+							document.getElementById('accountAddForm').value=data.helperMember.account;
+
+							//履歷大頭照用
+							document.getElementById('helpercvlink').value=data.helpercv.helpercvlink;
+							document.getElementById('helperphoto').value=data.helpercv.helperphoto;
+							var imgElement = document.getElementById('myphoto');
+					        imgElement.src = data.helpercv.helperphoto+".jpg";
+						}
+
+						
+
+						function  update(){
+							var obj=new Object();
+							obj.helpermemberid=$("#helpermemberid").val();
+							obj.birth=$("#birth").val();
+							obj.sexual=$("#sexual").val();
+							obj.country=$("#country").val();
+							obj.username=$("#username").val();
+							obj.mobile=$("#mobile").val();
+							$.ajax({
+								url:"/updatehelpermember",
+								type:"put",
+								datetype:"text",
+								contentType:"application/json",
+								data:JSON.stringify(obj),
+								success:function (data){alert(data)},
+								error:function (error){console.log(error)}
+							})
+						}
+						function logout(){
+							$.ajax({
+								url:'/clearSession',
+								type:'get',
+								contentType:'text',
+								success:function (data){window.location.replace('/homePage.html')},
+								error:function (error){console.log(error)}
+							})
+						}
+
+
+						document.addEventListener('DOMContentLoaded', function () {
+							const editButton = document.getElementById('editCV');
+							const saveButton = document.getElementById('saveCV');
+							const photoInput = document.querySelector('input[name="helperphoto"]');
+							const cvInput = document.querySelector('input[name="helpercvlink"]');
+							
+							// 初始狀態下鎖定欄位
+							photoInput.disabled = true;
+							cvInput.disabled = true;
+							saveButton.style.display = 'none';
+
+							editButton.addEventListener('click', function () {
+									// 解鎖欄位，隱藏修改按鈕，顯示保存按鈕
+									photoInput.disabled = false;
+									cvInput.disabled = false;
+									editButton.style.display = 'none';
+									saveButton.style.display = 'block';
+								});
+
+								saveButton.addEventListener('click', function () {
+									// 鎖定欄位，隱藏保存按鈕，顯示修改按鈕
+									photoInput.disabled = true;
+									cvInput.disabled = true;
+									saveButton.style.display = 'none';
+									editButton.style.display = 'block';
+								});
+							});
+					</script>
+					
+					
+
+					<!-- Contact -->
+						<article id="contact" class="panel">
+							<header>
+								<h2>收藏工作</h2>
+							</header>
+							
+							<table>
+								<thead>
+									<tr>
+										<th>已收藏店家</th>
+										<th>開始日期</th>
+										<th>結束日期</th>
+										<th>取消收藏</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tbody id="helperjob"></tbody>
+									
+								</tbody>
+							</table>
+
+							
+
+						</article>
+
+					
+					
+					<!-- share -->
+							<article id="shareMe" class="panel">
+								<header>
+									<h2>心得分享</h2>
+								</header>
+
+								<form id="addShareForm" action="" method="post">
+
+									<div>
+										<div class="row">
+
+											<div class="col-6 col-12-medium">
+												<input type="text"  id="usernameAddForm" name="username" value="" placeholder="暱稱" readonly/>
+											</div>
+											<input type="hidden" id="accountAddForm">
+											<input type="hidden" id="memberIdAddForm">
+
+											<div class="col-6 col-12-medium">
+												<select name="worktype" id="worktype" required>
+    											    <option value="" disabled selected hidden>*請選擇工作行業別</option>
+    											    <option value="餐廳">餐廳</option>
+    											    <option value="民宿">民宿</option>
+   											      	<option value="酒吧">酒吧</option>
+   											      	<option value="潛店">潛店</option>
+   											      	<option value="名產店">名產店</option>
+   											      	<option value="農場">農場</option>
+   											      	<option value="咖啡廳">咖啡廳</option>
+   											      	<option value="早餐/早午餐">早餐/早午餐</option>
+   											      	<option value="飲料店/果汁店">飲料店/果汁店</option>
+   											      	<option value="手作商店">手作商店</option>
+   											      	<option value="其他">其他</option>
+   											   </select>
+											</div>
+
+											<div class="col-6 col-12-medium">
+												<input type="text" name="startdate" id="startdate" value="" placeholder="*換宿時間（起）" required/>
+          									 	<input type="date" id="startDatePicker" style="display: none;" required/><br>
+											</div>
+
+											<div class="col-6 col-12-medium">
+												<input type="text" name="enddate" id="enddate" value="" placeholder="*換宿時間（訖）" required/>
+          									 	<input type="date" id="endDatePicker" style="display: none;" required/><br>
+											</div>
+
+											<div class="col-6 col-12-medium">
+												<select name="place" id="place" required>
+												<option value="" disabled selected hidden>*請選擇工作地點</option>
+												<optgroup label="--北部--">
+												<option value="台北">台北</option>
+												<option value="新北">新北</option>
+												<option value="基隆">基隆</option>
+												<option value="桃園">桃園</option>
+												<option value="新竹">新竹</option>
+												</optgroup>
+												<optgroup label="--中部--">
+												<option value="苗栗">苗栗</option>
+												<option value="台中">台中</option>
+												<option value="彰化">彰化</option>
+												<option value="南投">南投</option>
+												<option value="雲林">雲林</option>
+												</optgroup>
+												<optgroup label="--南部--">
+												<option value="嘉義">嘉義</option>
+												<option value="台南">台南</option>
+												<option value="高雄">高雄</option>
+												<option value="屏東">屏東</option>
+												</optgroup>
+												<optgroup label="--東部--">
+												<option value="花蓮">花蓮</option>
+												<option value="台東">台東</option>
+												</optgroup>
+												<optgroup label="--離島--">
+												<option value="澎湖">澎湖</option>
+												<option value="金門">金門</option>
+												<option value="馬祖">馬祖</option>
+												<option value="小琉球">小琉球</option>
+												<option value="綠島">綠島</option>
+												<option value="蘭嶼">蘭嶼</option>
+												<option value="龜山島">龜山島</option>
+
+												</optgroup>	
+											</select>	
+										</div>	
+
+
+											<div class="col-6 col-12-medium">
+												<input type="text" name="storename" value="" placeholder="*店家名稱（可部分隱藏）" required/>
+											</div>
+
+
+											<div class="col-6 col-12-medium">
+												<select name="grade" id="grade" required>
+    											    <option value="" disabled selected hidden>*推薦換宿指數</option>
+    											    <option value="1分">1分 非常差勁</option>
+    											    <option value="2分">2分 有待改善</option>
+   											      	<option value="3分">3分 一般水準</option>
+   											      	<option value="4分">4分 表現尚可</option>
+   											      	<option value="5分">5分 達及格線</option>
+   											      	<option value="6分">6分 及格</option>
+   											      	<option value="7分">7分 高於平均水準</option>
+   											      	<option value="8分">8分 高度評價</option>
+   											      	<option value="9分">9分 非常出色</option>
+   											      	<option value="10分">10分 超出想象的優</option>
+   											      	<option value="不予置評/不建議">不予置評/不建議</option>
+   											   </select>
+											</div>
+
+										
+											<div class="col-6 col-12-medium">
+   											 <input type="text" name="updatedate" id="updatedate" value="" placeholder="心得上傳日期" readonly required/><br>
+											</div>
+
+
+											<div class="col-12">
+												<textarea name="workdetail"  placeholder="*工作內容" rows="6"></textarea>
+											</div>
+
+											<div class="col-12">
+												<textarea name="content"  placeholder="*換宿心得" rows="6"></textarea>
+											</div>
+
+											<div class="align-center ">
+											<input type="submit" value="分享心得" style="font-size:20px;"> 
+											</div>
+
+										</div>
+									</div>
+								</form>
+							</article>
+
+										
+										
+										<script>
+   										// 顯示日期選擇
+     										  document.getElementById('startdate').addEventListener('click', function() {
+        										   document.getElementById('startDatePicker').style.display = 'block';
+        										   document.getElementById('startDatePicker').focus();
+      										 });
+     										  document.getElementById('enddate').addEventListener('click', function() {
+        										   document.getElementById('endDatePicker').style.display = 'block';
+        										   document.getElementById('endDatePicker').focus();
+      										 });
+
+
+      									// 選擇，更新，隱藏
+     										  document.getElementById('startDatePicker').addEventListener('change', function() {
+     										      document.getElementById('startdate').value = this.value;
+      										     this.style.display = 'none';
+     										     checkDateValidity();
+     										  });
+     										  document.getElementById('endDatePicker').addEventListener('change', function() {
+     										      document.getElementById('enddate').value = this.value;
+      										     this.style.display = 'none';
+     										     checkDateValidity();
+
+     										  });
+
+										// 檢查日期有效性
+										function checkDateValidity() {
+										var startDate = new Date(document.getElementById('startdate').value);
+										var endDate = new Date(document.getElementById('enddate').value);
+
+										if (endDate <= startDate) {
+										alert('結束日期必須大於開始日期！');
+										document.getElementById('enddate').value = '';
+										document.getElementById('endDatePicker').value = '';
+											}
+										}
+
+
+										// 抓當日日期
+    										const currentDate = new Date();
+
+   										// 格式化 YYYY-MM-DD HH:MM:SS
+  										  const formattedDateTime = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')} ${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}:${currentDate.getSeconds().toString().padStart(2, '0')}`;
+
+ 										// 填到 createtime 
+ 										   document.getElementById('updatedate').value = formattedDateTime;
+										</script>
+
+
+							
+
+					</div>
+					
+					<br>
+					
+					<ul class="actions">
+					<li><a href="homePageAfterHP.html" class="button active">返回首頁</a></li>
+					</ul>
+					
+					
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+			
+		<!-- Scripts -->
+			<script src="assets1/js/jquery.min.js"></script>
+			<script src="assets1/js/browser.min.js"></script>
+			<script src="assets1/js/breakpoints.min.js"></script>
+			<script src="assets1/js/util.js"></script>
+			<script src="assets1/js/main.js"></script>
+			<script src="assets/js/addHelperShare.js"></script>
+			<script src="assets/js/helpercv.js"></script>
+			<script src="assets/js/getHelperJob.js"></script>
+
+
+
+
+
+
+	</body>
+</html>

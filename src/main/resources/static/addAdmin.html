@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>後台-新增員工</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets3/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets3/css/noscript.css" /></noscript>
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<img src="images/logo.jpg" alt="LOGO" style="max-width: 100%; max-height: 100%;"/>
+				</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="adminAccount.html">當前登入</a></li>
+							<li class="active"><a href="addAdmin.html">新增員工</a></li>
+							<li><a href="adminFix.html">員工管理</a></li>
+							<li><a href="whatFix.html">公告管理</a></li>
+							<li><a href="helperFix.html">小幫手管理</a></li>
+							<li><a href="storeFix.html">商家管理</a></li>
+							<li><a href="shareFix.html">心得管理</a></li>
+							<li><a href="storeCVFix.html">職缺管理</a></li>
+							<li><a href="messageHelp.html">檢舉信管理</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- 內容 -->
+
+							
+							<article id="addAdmin" class="post featured">
+								<header>
+									<h2>新增員工</h2>
+									<!-- 顯示當日日期 -->
+									<span class="date" id="currentDateTime">April 25, 2017</span>								</header>
+								<div>
+												<!-- <div class="row"> -->
+													<div class="col-6 col-12-medium">
+													<div class="align-center ">
+											<section>
+												
+												<form method="post" action="/adminsignup" id="adminSignUpForm">
+													<div class="row.aln-center"> 
+			
+														<div class="col-6 col-12-xsmall">
+															<input type="text" name="username" id="username" value="" placeholder="員工暱稱" required/> <br>
+			
+														</div>
+														
+														<div class="col-6 col-12-xsmall">
+															<input type="text" name="name" id="name" value="" placeholder="真實姓名" required/>  <br>
+														</div>
+														
+														<div class="col-12 col-12-xsmall">
+															<input type="text" name="account" id="account" value="" placeholder="登入帳號" required/>  <br>
+														</div>
+														
+														<div class="col-12 col-12-xsmall">
+														<input type="password" name="password" id="password" value="" placeholder="密碼（至少1個大寫，長度至少6個字元）" 
+														pattern="^(?=.*[A-Z]).{6,}$" title="請輸入至少1個大寫字母，長度至少6個字元的密碼" required /> <br>
+														</div>
+														
+														<div class="col-12 col-12-xsmall">
+														<input type="password" name="passwordagain" id="passwordagain" value="" placeholder="密碼確認" required/><br>
+														</div>
+														<div id="passwordMismatchError" style="color: red;"></div>
+														
+														<div class="col-12 col-12-xsmall">
+															<input type="text" name="mobile" id="mobile" value="" placeholder="手機號碼" required/>  <br>
+														</div>
+														
+														<div class="col-12 col-12-xsmall">
+															<input type="text" name="createtime" id="createtime" value="" placeholder="創建日期" readonly required/><br>
+														</div>
+														
+													<input type="submit" value="確認新增員工" style="font-size: 14px;">  <br>
+													</div>
+													</div>
+													</div>
+												</form>
+											</section>
+								</div>
+					
+								
+	
+								
+								
+								
+								
+								
+								
+								<!-- 登出帳號並且返回登入畫面 -->
+								<ul class="actions special">
+									<li><a href="/clearSession" class="button large">登出帳號</a></li>
+								</ul>
+							</article>
+				
+
+							<script>
+								// 抓當日日期
+								const currentDate = new Date();
+
+								// 格式化 YYYY-MM-DD
+								const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
+
+								// 填到 createtime 输入框
+								document.getElementById('createtime').value = formattedDate;
+
+								//判斷密碼
+								const passwordInput = document.getElementById('password');
+								const passwordAgainInput = document.getElementById('passwordagain');
+								const passwordMismatchError = document.getElementById('passwordMismatchError');
+
+								passwordAgainInput.addEventListener('input', function() {
+									if (passwordInput.value === passwordAgainInput.value) {
+										passwordMismatchError.textContent = '';
+									} else {
+										passwordMismatchError.textContent = '密碼不相符';
+									}
+								});
+
+								
+
+							</script>
+							
+							
+
+					
+
+				
+					
+							
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets3/js/jquery.min.js"></script>
+			<script src="assets3/js/jquery.scrollex.min.js"></script>
+			<script src="assets3/js/jquery.scrolly.min.js"></script>
+			<script src="assets3/js/browser.min.js"></script>
+			<script src="assets3/js/breakpoints.min.js"></script>
+			<script src="assets3/js/util.js"></script>
+			<script src="assets3/js/main.js"></script>
+			<script src="assets3/js/updateTime.js"></script>
+			<script src="assets3/js/adminSignUp.js"></script>
+
+	</body>
+</html>

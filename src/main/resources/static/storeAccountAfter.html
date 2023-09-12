@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>打工換宿趣-店家資料</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+		<link rel="stylesheet" href="assets1/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+
+		<style>
+			.col-8 input,
+			.col-11 input {
+				width: 100%; 
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#home" class="icon solid fa-home"><span>基本資料</span></a>
+						<a href="#work" class="icon fa-solid fa-heart"><span>已發出職缺</span></a>
+						<!-- <a href="#contact" class="icon solid fa-envelope"><span>查看通知</span></a> -->
+						<a href="#shareMe" class="icon solid fa-folder"><span>新增職缺</span></a>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+
+					<!-- Me -->
+                    <article id="home" class="panel intro">
+
+                        <header>
+                            <h1>基本資料</h1>
+                            <p>修改之後記得保存</p>
+                            <img src="images/logo.jpg" alt="我的LOGO" style="max-width: 100%; max-height: 100%;"/>
+                        </header>
+
+                        <form id="userForm" action="#" method="post">
+                            <div>
+                                <div class="row">
+                                    
+                                    <div class="col-3 col-12-medium">
+                                        <br><label for="storememberid">店家會員編號：</label>
+                                    </div>
+
+                                    <div class="col-8 col-12-medium">
+                                        <br><input  type="text" id="storememberid" name="storememberid" value="" placeholder="店家會員編號" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="account">你的帳號：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="account" name="account" value="" placeholder="帳號" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="password">你的密碼：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="password" name="password" value="" placeholder="密碼" disabled/>
+										<a href="forgetPassword" >前往修改密碼</a>
+
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="storename">店家名稱：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="storename" name="storename" value="" placeholder="店家名稱" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="ownername">負責人姓名：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="ownername" name="ownername" value="" placeholder="負責人姓名(可修改)" disabled/>
+                                    </div>
+
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="address">店家登記地址：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="address" name="address" value="" placeholder="地址(可修改)" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="phone">店內電話：</label>
+                                    </div>
+
+                                    <div class="col-7 col-12-medium">
+                                        <input  type="text" id="phone" name="phone" value="" placeholder="店家號碼（可修改）" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="mobile">你的手機號碼：</label>
+                                    </div>
+
+                                    <div class="col-8 col-12-medium">
+                                        <input type="text" id="mobile" name="mobile" value="" placeholder="手機號碼(可修改)" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="password">信箱：</label>
+                                    </div>
+
+                                    <div class="col-8 col-12-medium">
+                                        <input type="text" id="email" name="email" value="" placeholder="電子信箱" disabled/>
+                                    </div>
+
+                                    <div class="col-3 col-12-medium">
+                                        <label for="createtime">加入時間：</label>
+                                    </div>
+
+                                    <div class="col-8 col-12-medium">
+                                        <input type="text" id="createtime" name="createtime" value="" placeholder="創建時間" disabled/>
+                                    </div>
+                                    
+                                    <br><br><br>
+                                </div>
+                            
+                                <button id="editButton" type="button">修改基本資料</button>
+
+                                <button id="saveButton" type="button" style="display: none;">保存資料</button>
+                                <br><br>
+                            </div>
+                        </form>
+                        <button id="logout" type="button">登出</button>
+                    </article>
+	
+						
+						
+
+					<!-- Work -->
+					<article id="work" class="panel">
+                        <header>
+                            <h2>我的職缺</h2>
+                        </header>
+
+
+						<div class="row">
+                            <table class="table table-light table-hover" border="1">
+                            	<thead>
+									<tr class="table table-danger">
+	                                    <th>我的職缺編號</th>
+	                                    <th>職缺日期</th>
+	                                    <th>工作地區</th>
+	                                    <th>被收藏數量</th> 
+                                	</tr>
+								</thead>
+								<tbody>
+									<tbody id="myjobtable"></tbody>
+									
+								</tbody>
+                                
+                                
+                            </table>
+                        </div>
+                    </article>
+					
+
+					<!-- Contact -->
+                    <!-- <article id="contact" class="panel">
+                        <header>
+                            <h2>系統通知</h2>
+                        </header>
+                        
+							
+                        <form action="#" method="post">
+                            <div>
+                                <div class="row">
+
+                                    <div class="col-6 col-12-medium">
+                                        <input type="text" name="name" placeholder="Name" />
+                                    </div>
+
+                                    <div class="col-6 col-12-medium">
+                                        <input type="text" name="email" placeholder="Email" />
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="text" name="subject" placeholder="Subject" />
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea name="message" placeholder="Message" rows="6"></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="submit" value="Send Message" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </article> -->
+
+					
+					
+					<!-- share -->
+                    <article id="shareMe" class="panel">
+						<header>
+							<h2>新增職缺</h2>
+						</header>
+
+
+                        <form id="storeworkListForm" action="" method="post">
+
+							<div>
+								<div class="row">
+									<input type="hidden" id="memberIdWorkList">
+									
+									<div class="col-3 col-12-medium">
+										<input type="text" id="storenameWorkList" name="stroename" placeholder="店家名稱" readonly/>
+									</div>
+
+									<div class="col-3 col-12-medium">
+										<input type="text" id="ownernameWorkList" name="ownername" placeholder="負責人名稱" readonly/>
+									</div>
+
+									<div class="col-3 col-12-medium">
+										<select name="location" id="location" required>
+										<option value="" disabled selected hidden>*請選擇工作地區</option>
+										<optgroup label="--北部--">
+										<option value="台北">台北</option>
+										<option value="新北">新北</option>
+										<option value="基隆">基隆</option>
+										<option value="桃園">桃園</option>
+										<option value="新竹">新竹</option>
+										</optgroup>
+										<optgroup label="--中部--">
+											<option value="苗栗">苗栗</option>
+											<option value="台中">台中</option>
+											<option value="彰化">彰化</option>
+											<option value="南投">南投</option>
+											<option value="雲林">雲林</option>
+										</optgroup>
+										<optgroup label="--南部--">
+											<option value="嘉義">嘉義</option>
+											<option value="台南">台南</option>
+											<option value="高雄">高雄</option>
+											<option value="屏東">屏東</option>
+										</optgroup>
+										<optgroup label="--東部--">
+										<option value="花蓮">花蓮</option>
+										<option value="台東">台東</option>
+										</optgroup>
+										<optgroup label="--離島--">
+										<option value="澎湖">澎湖</option>
+										<option value="金門">金門</option>
+										<option value="馬祖">馬祖</option>
+										<option value="小琉球">小琉球</option>
+										<option value="綠島">綠島</option>
+										<option value="蘭嶼">蘭嶼</option>
+										<option value="龜山島">龜山島</option>
+
+										</optgroup>	
+									</select>	
+									</div>
+								
+									<div class="col-3 col-12-medium">
+										<input type="text" name="workupdatetime" id="workupdatetime" value="" placeholder="職缺上傳日期" readonly required/><br>
+									</div>
+
+
+									<div class="col-12 col-12-medium">
+										<input type="text" id="addressWorkList" name="address" placeholder="工作地點（地址）" readonly/>
+									</div>
+
+									<div class="col-12 col-12-medium">
+										<input type="text" id="emailWorkList" name="email" placeholder="Gmail信箱" readonly/>
+									</div>
+
+									<div class="col-6 col-12-medium">
+										<input type="text" id="mobileWorkList" name="mobile" placeholder="手機" readonly/>
+									</div>
+
+									<div class="col-6 col-12-medium">
+										<input type="text"  id="phoneWorkList" name="phone" placeholder="店家電話號碼" readonly/>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="workage" id="workage" required>
+											<option value="" disabled selected hidden>*最低換宿年齡</option>
+											<option value="18歲">18歲</option>
+											<option value="20歲">20歲</option>
+											<option value="25歲">25歲</option>
+											<option value="不限（禁止未成年）">不限（禁止未成年）</option>
+										</select>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="worksexual" id="worksexual" required>
+											<option value="" disabled selected hidden>*換宿需求性別(宿舍問題）</option>
+											<option value="女性">女性</option>
+											<option value="男性">男性</option>
+											<option value="不限">不限</option>
+										</select>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="howtoapply" id="howtoapply" required>
+											<option value="" disabled selected hidden>*申請方式</option>
+											<option value="信箱">信箱</option>
+											<option value="簡訊詢問">簡訊詢問</option>
+											<option value="來電詢問">來電詢問</option>
+											<option value="以上皆可(其他方式詳見備註)">以上皆可(其他方式詳見備註)</option>
+										</select>
+									</div>
+
+									<div class="col-12">
+										<textarea name="others" id="others" placeholder="*其他換宿條件＆備註" rows="3" required></textarea>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<input type="text" name="changedatebegin" id="changedatebegin" value="" placeholder="*應徵換宿時間（起）" required/>
+										<input type="date" id="startDatePicker" style="display: none;" required/><br>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<input type="text" name="changedateeend" id="changedateeend" value="" placeholder="*應徵換宿時間（訖）" required/>
+										<input type="date" id="endDatePicker" style="display: none;" required/><br>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="aleastdays" id="aleastdays" required>
+											<option value="" disabled selected hidden>*最短換宿時間</option>
+											<option value="一天">一天</option>
+											<option value="一週">一週</option>
+											<option value="兩週">兩週</option>
+											<option value="一個月">一個月</option>
+											<option value="兩個月">兩個月</option>
+											<option value="想待多久待多久">想待多久待多久</option>
+										</select>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="breaktime" id="breaktime" required>
+											<option value="" disabled selected hidden>*週休天數</option>
+											<option value="一週一天">一週一天</option>
+											<option value="一週兩天">一週兩天</option>
+											<option value="無休息日">無休息日</option>
+											<option value="聯絡討論">聯絡討論</option>
+										</select>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="workhours" id="workhours" required>
+											<option value="" disabled selected hidden>*一天工時</option>
+											<option value="不超過三小時">不超過三小時</option>
+											<option value="不超過四小時">不超過四小時</option>
+											<option value="不超過五小時">不超過五小時</option>
+											<option value="不超過六小時">不超過六小時</option>
+											<option value="聯絡討論">聯絡討論</option>
+										</select>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="atwhattime" id="atwhattime" required>
+											<option value="" disabled selected hidden>*班別</option>
+											<option value="早班（早上9點前上班）">早班（早上9點前上班）</option>
+											<option value="午班（下午1點前上班）">午班（下午1點前上班）</option>
+											<option value="晚班（傍晚6點前上班）">晚班（傍晚6點前上班）</option>
+											<option value="大夜班（晚上8點前上班）">大夜班（晚上8點前上班）</option>
+											<option value="其他">其他</option>
+										</select>
+									</div>
+
+
+									<div class="col-12">
+										<textarea name="workdetails" id="workdetails" placeholder="*工作內容" rows="3" required></textarea>
+									</div>
+
+									<div class="col-4 col-12-medium">
+										<select name="scooters" id="scooters" required>
+											<option value="" disabled selected hidden>*是否提供交通工具</option>
+											<option value="一般摩托車">一般摩托車</option>
+											<option value="電動摩托車">電動摩托車</option>
+											<option value="腳踏車">腳踏車</option>
+											<option value="無">無</option>
+											<option value="其他">其他</option>
+										</select>
+									</div>
+
+
+										<div class="col-4 col-12-medium">
+										<select name="meals" id="meals" required>
+											<option value="" disabled selected hidden>*是否提供餐食</option>
+											<option value="一餐">一餐</option>
+											<option value="兩餐">兩餐</option>
+											<option value="三餐">三餐</option>
+											<option value="無供餐">無供餐</option>
+											<option value="其他">其他</option>
+										</select>
+										</div>
+
+
+									<div class="col-4 col-12-medium">
+										<select name="money" id="money" required>
+											<option value="" disabled selected hidden>*是否提供零用金</option>
+											<option value="一週200">一週200</option>
+											<option value="一週500">一週500</option>
+											<option value="一週1000">一週1000</option>
+											<option value="一週1500">一週1500</option>
+											<option value="一週2000">一週2000</option>
+											<option value="另議">另議</option>
+											<option value="無供零用金">無供零用金</option>
+										</select>
+									</div>
+
+									<div class="col-12">
+										<textarea name="workbonus" id="workbonus" placeholder="*其他福利" rows="3" required></textarea>
+									</div>
+
+									<div class="align-center ">
+									<input type="submit" value="送出履歷" style="font-size:20px;"> 
+									</div>
+								</div>
+							</div>
+						</form>
+					</article>
+
+                    <script>
+                        // 顯示日期選擇
+                            document.getElementById('changedatebegin').addEventListener('click', function() {
+                            document.getElementById('startDatePicker').style.display = 'block';
+                            document.getElementById('startDatePicker').focus();
+                            });
+                            document.getElementById('changedateeend').addEventListener('click', function() {
+                            document.getElementById('endDatePicker').style.display = 'block';
+                            document.getElementById('endDatePicker').focus();
+                            });
+
+
+                        // 選擇，更新，隱藏
+                            document.getElementById('startDatePicker').addEventListener('change', function() {
+                            document.getElementById('changedatebegin').value = this.value;
+                            this.style.display = 'none';
+                            checkDateValidity();
+                            });
+                            document.getElementById('endDatePicker').addEventListener('change', function() {
+                            document.getElementById('changedateeend').value = this.value;
+                            this.style.display = 'none';
+                            checkDateValidity();
+                            });
+
+                        // 檢查日期有效性
+                            function checkDateValidity() {
+                            var startDate = new Date(document.getElementById('changedatebegin').value);
+                            var endDate = new Date(document.getElementById('changedateeend').value);
+
+                            if (endDate <= startDate) {
+                            alert('結束日期必須大於開始日期！');
+                            document.getElementById('changedateeend').value = '';
+                            document.getElementById('endDatePicker').value = '';
+                                }
+                            }
+
+
+                        // 抓當日日期
+                            const currentDate = new Date();
+
+                        // 格式化 YYYY-MM-DD HH:MM:SS
+                            const formattedDateTime = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')} ${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}:${currentDate.getSeconds().toString().padStart(2, '0')}`;
+
+                        // 填到 createtime 输入框
+                            document.getElementById('workupdatetime').value = formattedDateTime;
+                        </script>
+
+                        
+
+
+
+
+					</div>
+					
+					<br>
+					
+					<ul class="actions">
+					<li><a href="homePageAfterSE.html" class="button active">返回首頁</a></li>
+					</ul>
+					
+					
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+			
+		<!-- Scripts -->
+			<script src="assets1/js/jquery.min.js"></script>
+			<script src="assets1/js/browser.min.js"></script>
+			<script src="assets1/js/breakpoints.min.js"></script>
+			<script src="assets1/js/util.js"></script>
+			<script src="assets1/js/main.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+			 <script src="assets/js/storeAccount.js"></script>
+
+	</body>
+</html>

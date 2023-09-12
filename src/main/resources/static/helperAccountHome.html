@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>小幫手資料</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets1/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+
+		<style>
+			/* 更改資料欄位 */
+			.col-8 input,
+			.col-10 input {
+				width: 100%; /* 寬 */
+			}
+			
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="helperAccountHome.html" class="icon solid fa-home"><span>個人資料</span></a>
+						<a href="helperAccountWork.html" class="icon solid fa-folder"><span>履歷</span></a>
+						<a href="helperAccountContact.html" class="icon solid fa-envelope"><span>已投遞店家</span></a>
+						<a href="helperAccountShareMe.html" class="icon fa-solid fa-heart"><span>分享心得</span></a>
+					</nav>
+<!-- Main -->
+<div id="main">
+
+    <!-- Me -->
+        <article id="home" class="panel intro">
+            <header>
+                <h1>基本資料</h1>
+                <p>修改之後記得保存</p>
+                <img id="myphoto" alt="請上傳大頭貼" style="max-width: 100%; max-height: 100%;"/>
+            </header>
+                <form id="userForm" action="#" method="post">
+                <div>
+                    <br>
+                    <div class="row">
+                        
+                        <div class="col-3 col-12-medium">
+                            <label for="helpermemberid">會員編號：</label>
+                        </div>
+                        <div class="col-8 col-12-medium">
+                            <input type="text" name="helpermemberid" id="helpermemberid" value="" placeholder="會員編號" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="account">你的帳號：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="account" id="account" value="" placeholder="帳號" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="password">你的密碼：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="password" id="password" value="" placeholder="密碼(可修改)" disabled/>
+                        <a href="forgetPassword" >前往修改密碼</a>
+
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="username">你的暱稱：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="username" id="username" value="" placeholder="暱稱(可修改)" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="name">你的真實姓名：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="name" id="name" value="" placeholder="真實姓名" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="birth">出生年月日：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="birth" id="birth" value="" placeholder="生日" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="sexual">你的性別：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="sexual" id="sexual" value="" placeholder="性別" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="country">你的國籍：</label>
+                        </div>
+                        <div class="col-7 col-12-medium">
+                            <input type="text" name="country" id="country" value="" placeholder="國籍" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="mobile">你的手機號碼：</label>
+                        </div>
+                        <div class="col-8 col-12-medium">
+                            <input type="text" name="mobile" id="mobile" value="" placeholder="手機號碼(可修改)" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="password">信箱：</label>
+                        </div>
+                        <div class="col-8 col-12-medium">
+                            <input type="text" name="email" id="email" value="" placeholder="電子信箱" disabled/>
+                        </div>
+
+                        <div class="col-3 col-12-medium">
+                            <label for="createtime">加入時間：</label>
+                        </div>
+                        <div class="col-8 col-12-medium">
+                            <input type="text" name="createtime" id="createtime" value="" placeholder="創建時間" disabled/>
+                        </div>
+                        
+
+                        
+                        <br><br><br>
+                    </div>
+                
+                    <button id="editButton" type="button">修改基本資料</button>
+                
+                    <button id="saveButton" type="button" style="display: none;">保存資料</button>
+                    <br><br>
+                </div>
+            </form>
+            <button id="logout" type="button">登出</button>
+            
+
+        </article>
+
+</div>
+					
+    <br>
+    
+    <ul class="actions">
+    <li><a href="homePageAfterHP.html" class="button active">返回首頁</a></li>
+    </ul>
+    
+    
+
+<!-- Footer -->
+    <div id="footer">
+        <ul class="copyright">
+            <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets1/js/jquery.min.js"></script>
+<script src="assets1/js/browser.min.js"></script>
+<script src="assets1/js/breakpoints.min.js"></script>
+<script src="assets1/js/util.js"></script>
+<script src="assets1/js/main.js"></script>
+<script src="assets1/js/helperAccountHome.js"></script>
+
+
+
+
+
+
+</body>
+</html>

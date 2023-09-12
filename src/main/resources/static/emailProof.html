@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>信箱驗證</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!-- logo -->
+    <link rel="icon" type="images/jpeg" href="images/logo.jpg"/>
+    <style>
+        /* Center the form vertically and horizontally */
+        #banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust this value for desired vertical alignment */
+        }
+
+        /* Adjust the width of the input fields */
+        #account, #password {
+            width: 450px; /* Change this value as needed */
+        }
+    </style>
+
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="landing is-preload">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><a href="homePage">打工換宿趣</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>選單</span></a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="homePage">首頁</a></li>
+                            <li><a href="what">簡介＆公告</a></li>
+                            <li><a href="helperLogin">小幫手登入</a></li>
+                            <li><a href="storeLogin">店家登入</a></li>
+                            <li><a href="postJob">查看換宿店家</a></li>
+                            <li><a href="share">分享經驗</a></li>
+                            <li><a href="helperSignUp">註冊成為小幫手</a></li>
+                            <li><a href="storeSignUp">註冊成為店家</a></li>
+                            <li><a href="contactUs">客服</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="banner">
+        <div class="inner">
+            <h2>信箱驗證</h2>
+            <p>點選寄送驗證號碼到你的Gmail! 驗證後開啟帳號</p>
+            <!-- Login Form -->
+            <form action="emailSuccess" method="post" id="check">
+
+
+                <!-- 在驗證頁面中讀取 SessionStorage 的 email 值並填充到表單 -->
+
+                <input type="hidden" id="hiddenEmail" name="hiddenEmail" value="">
+
+                <input type="text" name="email" id="email" placeholder="你的信箱" readonly required> <br>
+
+
+                <input type="text" id="passcode" name="passcode" placeholder="輸入六位數驗證碼" required
+                       pattern="\d{6}">
+                <span id="passcodeError" style="color: red;"></span><br>
+
+
+                <input type="button" id="sendcode" value="發送驗證碼" style="font-size: 14px;">
+
+                <input type="submit" id="proof" value="驗證" style="font-size: 14px;">
+            </form>
+            <div id="false"></div>
+
+
+            <script>
+                $(document).ready(() => {
+                    setTimeout(() => {
+                        getSession();
+                    }, 1000);
+                });
+                var number;
+                $('#sendcode').click(sendCode);
+                $('#check').submit(confirm);
+                $(document).ready(init);
+
+                function init() {
+                    setInterval(sendCode, 1000 * 60 * 5)
+                }
+
+                function sendCode() {
+                    if (number > 0) {
+                        alert('請勿重複寄送驗證碼'+formatTime(number));
+                    }else {
+                        var obj = new Object();
+                        obj.toEmail = $('#email').val();
+                        $.ajax({
+                            url: '/mailverify',
+                            type: 'post',
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            data: JSON.stringify(obj),
+                            success:function (data) {
+                                var result = data.toString();
+                                if (result === 'true') {
+                                    alert("已發送驗證碼");
+                                } else {
+                                    $('#false').html("<h4 style='color: red'>帳號或信箱錯誤,請檢查過後並重新輸入</h4>");
+                                    setTimeout(function () {
+                                        $('#false').html("")
+                                    }, 1500);
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error)
+                            }
+                        });
+                        start();
+                    }
+                }
+
+                function confirm(evt) {
+                    evt.preventDefault();
+                    var obj = $('#passcode').val();
+                    $.ajax({
+                        url: '/confirmMail',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json',
+                        data: obj,
+                        success: checkData,
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    })
+
+                }
+
+                function checkData(data) {
+                    var code = data.toString();
+                    if (code == 'true') {
+                        window.location.replace('emailSuccess.html')
+                    } else {
+                        $('#false').html("<h4 style='color: red'>驗證碼錯誤,請檢查過後並重新輸入</h4>");
+                    }
+                }
+
+                function getSession() {
+                    $.ajax({
+                        url: '/getCreateSession',
+                        type: 'get',
+                        contentType: 'text',
+                        success: setSession,
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    })
+                }
+
+                function setSession(data) {
+                    document.getElementById("email").value = data.email;
+                }
+                function start() {
+                    number=10;
+                    var InitInterval;
+                    InitInterval=setInterval(function () {
+                        number--;
+                        if (number <= 0){
+                            clearInterval(InitInterval);}
+                    }, 1000)
+                }
+                function formatTime(seconds) {
+                    var minutes = Math.floor(seconds / 60);
+                    var remainingSeconds = seconds % 60;
+
+                    var formattedTime = minutes.toString().padStart(2, '0') + ':' + remainingSeconds.toString().padStart(2, '0');
+                    return formattedTime;
+                }
+                //var email = sessionStorage.getItem("email");
+                // document.getElementById("hiddenEmail").value = email;
+                // document.getElementById("email").value = email;
+
+
+                //以下還沒解決
+
+                //限制六位數阿拉伯數字驗證碼
+                function confirm(evt) {
+                    evt.preventDefault();
+                    var passcode = $('#passcode').val();
+                    if (!/^\d{6}$/.test(passcode)) {
+                        $('#passcodeError').text('驗證碼必須為六位數字');
+                        return;
+                    }
+                    $('#passcodeError').text(''); // 清除消息
+                    $.ajax({
+                        url: '/confirmMail',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json',
+                        data: passcode,
+                        success: checkData,
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                }
+
+                // //限制按鈕只能按60秒一次
+                // function sendCode() {
+                //     var obj = new Object();
+                //     obj.toEmail = $('#email').val();
+                //     $.ajax({
+                //         url: '/mailverify',
+                //         type: 'post',
+                //         dataType: 'json',
+                //         contentType: 'application/json',
+                //         data: JSON.stringify(obj),
+                //         success: function (data) {
+                //             console.log(data);
+                //             // 提示窗口
+                //             alert("驗證碼已傳送到您的郵箱！");
+                //             // 禁用按钮
+                //             $('#sendcode').prop('disabled', true);
+                //             // 60秒後恢復
+                //             setTimeout(function () {
+                //                 $('#sendcode').prop('disabled', false);
+                //             }, 60000);
+                //         },
+                //         error: function (error) {
+                //             console.log(error);
+                //         }
+                //     });
+                // }
+
+
+            </script>
+
+            <p><a href="forgetPassword">忘記密碼？</a></p>
+
+            <p><a href="helperSignUp">註冊成為小幫手</a></p>
+        </div>
+    </section>
+    <!-- ... Rest of the content ... -->
+    <footer id="footer">
+        <!-- ... Footer content ... -->
+    </footer>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

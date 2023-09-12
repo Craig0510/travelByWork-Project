@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>打工換宿趣-註冊成為小幫手</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="homePage">打工換宿趣</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>選單</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="homePage">首頁</a></li>
+											<li><a href="what">公告</a></li>
+											<li><a href="helperLogin">小幫手登入</a></li>
+											<li><a href="storeLogin">店家登入</a></li>
+											<li><a href="postJob">查看換宿店家</a></li>
+											<li><a href="share">分享經驗</a></li>
+											<li><a href="helperSignUp">註冊成為小幫手</a></li>
+											<li><a href="storeSignUp">註冊成為店家</a></li>
+											<li><a href="contactUs">聯絡我們</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>小幫手註冊</h2>
+							<p>歡迎加入我們！</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+									
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											
+										<div class="align-center ">
+								<section>
+									<h4>輸入註冊基料</h4>
+									
+									<form method="post" id="login">
+										<div class="row.aln-center"> 
+
+										
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="username" id="username" value="" placeholder="暱稱（大家都叫你什麼？）" required/> <br>
+
+											</div>
+											<div id="failuser"></div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="name" id="name" value="" placeholder="真實姓名" required/>  <br>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="account" id="account" value="" placeholder="登入帳號" required/>  <br>
+											</div>
+											<div id="failaccount"></div>
+
+											<div class="col-6 col-12-xsmall">
+  											  <input type="password" name="password" id="password" value="" placeholder="密碼（至少1個大寫，長度至少6個字元）" 
+  											      pattern="^(?=.*[A-Z]).{6,}$" title="請輸入至少1個大寫字母，長度至少6個字元的密碼" required />
+  											  <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+  											  <label for="showPassword">顯示密碼</label>
+											</div>
+
+
+											<div class="col-6 col-12-xsmall">
+											<input type="password" name="passwordagain" id="passwordagain" value="" placeholder="密碼確認" required/><br>
+											</div>
+											<div id="passwordMismatchError" style="color: red;"></div>
+
+											<div class="col-6 col-12-xsmall">
+											<input type="email" name="email" id="email" value="" placeholder="電子郵件（請輸入Gmail完成驗證）@gmail.com" 
+											pattern=".+@gmail\.com$" title="請輸入以 @gmail.com 結尾的有效電子郵件地址" required /><br>
+											</div>
+										</div>
+										<div id="failemail"></div>
+											
+											 <div class="col-6 col-12-xsmall">
+           									 	<input type="text" name="birth" id="birth" value="" placeholder="生日" required/>
+           									 	<input type="date" id="birthPicker" style="display: none;" required/><br>
+     										 </div>
+ 
+											<div class="col-6 col-12-xsmall">
+  											  <select name="sexual" id="sexual" required>
+    											    <option value="" disabled selected hidden>請選擇性別</option>
+    											    <option value="female">女性</option>
+    											    <option value="male">男性</option>
+   											      	<option value="other">不願透露</option>
+   											   </select>
+  											</div>
+											<br>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="mobile" id="mobile" value="" placeholder="手機號碼" required pattern="09\d{8}"/> <br>
+											</div>
+											
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="country" id="country" value="" placeholder="國籍" required/>  <br>
+											</div>
+											<div class="col-6 col-12-xsmall">
+   											 <input type="text" name="createtime" id="createtime" value="" placeholder="創建日期" readonly required/><br>
+											</div>
+									
+										<input type="submit" value="註冊（跳轉註冊成功驗證mail）" style="font-size: 14px;">  <br>
+            						    </form>
+										<div id="tes1t"></div>
+										<script >
+											$("#login").submit(send);
+
+											function send(evt){
+												evt.preventDefault();
+												var obj=new Object();
+												obj.username=$("#username").val();
+												obj.name=$("#name").val();
+												obj.account=$("#account").val();
+												obj.password=$("#password").val();
+												obj.email=$("#email").val();
+												obj.birth=$("#birth").val();
+												obj.sexual=$("#sexual").val();
+												obj.mobile=$("#mobile").val();
+												obj.country=$("#country").val();
+												obj.createtime=$("#createtime").val();
+												obj.role='ROLE_USER';
+												$.ajax({
+													url:"/createsession",
+													type:"post",
+													contentType:"application/json",
+													datatype:"text",
+													data:JSON.stringify(obj),
+													success:checkValue,
+													error:function (error){
+														console.log(error)
+													}
+												})
+											}
+											function checkValue(data){
+												$("#failuser").html("");
+												$("#failaccount").html("");
+												$("#failemail").html("");
+												var message=data.toString();
+												if(message==="username"){
+													$("#failuser").html("<h4 style='color: red'>暱稱不可重複,請重新輸入<h4>");
+												}else if (message==="account"){
+													$("#failaccount").html("<h4 style='color: red'>帳號不可重複,請重新輸入<h4>");
+												}else if (message==="email"){
+													$("#failemail").html("<h4 style='color: red'>信箱不可重複,請重新輸入<h4>");
+												}else{
+													window.location.replace('/emailProof.html');
+												}
+											}
+
+   										// 顯示日期選擇
+   											console.log("test");
+     										  document.getElementById('birth').addEventListener('click', function() {
+        										   document.getElementById('birthPicker').style.display = 'block';
+        										   document.getElementById('birthPicker').focus();
+      										 });
+
+      									// 選擇，更新，隱藏
+     										  document.getElementById('birthPicker').addEventListener('change', function() {
+     										      document.getElementById('birth').value = this.value;
+      										     this.style.display = 'none';
+     										  });
+									
+										// 抓當日日期
+    									const currentDate = new Date();
+
+   										// 格式化 YYYY-MM-DD
+  										const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
+
+ 										// 填到 createtime 输入框
+ 										document.getElementById('createtime').value = formattedDate;
+										
+										//判斷密碼
+										const passwordInput = document.getElementById('password');
+										const passwordAgainInput = document.getElementById('passwordagain');
+										const passwordMismatchError = document.getElementById('passwordMismatchError');
+
+										passwordAgainInput.addEventListener('input', function() {
+										if (passwordInput.value === passwordAgainInput.value) {
+										passwordMismatchError.textContent = '';
+										} else {
+										passwordMismatchError.textContent = '密碼不相符';
+										}
+										});
+										
+
+										//可看見密碼
+										function togglePasswordVisibility() {
+  										  var passwordInput = document.getElementById('password');
+   										 if (passwordInput.type === 'password') {
+  										      passwordInput.type = 'text';
+  										  } else {
+   										     passwordInput.type = 'password';
+  										  }
+										}
+
+
+
+   										</script>
+
+
+
+
+										
+									
+									<br>
+									<ul class="actions fit">
+										<li><a href="homePage" class="button primary fit">返回首頁</a></li>
+									</ul>
+									
+									
+									
+								
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/groups/548556241854157/" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+						<li><a href="contactUs.html" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

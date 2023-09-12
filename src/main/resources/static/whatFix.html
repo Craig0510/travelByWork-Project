@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>後台-公告管理</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets3/css/main.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <noscript><link rel="stylesheet" href="assets3/css/noscript.css" /></noscript>
+    <!-- logo -->
+    <link rel="icon" type="images/jpeg" href="images/logo.jpg" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <img src="images/logo.jpg" alt="LOGO" style="max-width: 100%; max-height: 100%;" />
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="adminAccount.html">當前登入</a></li>
+                <li><a href="addAdmin.html">新增員工</a></li>
+                <li><a href="adminFix.html">員工管理</a></li>
+                <li class="active"><a href="whatFix.html">公告管理</a></li>
+                <li><a href="helperFix.html">小幫手管理</a></li>
+                <li><a href="storeFix.html">商家管理</a></li>
+                <li><a href="shareFix.html">心得管理</a></li>
+                <li><a href="storeCVFix.html">職缺管理</a></li>
+                <li><a href="messageHelp.html">檢舉信管理</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- 內容 -->
+            <article id="" class="post featured">
+                <header>
+                    <h2>新增刪除查詢公告</h2>
+                    <!-- 顯示當日日期 -->
+                    <span class="date" id="currentDateTime">April 25, 2017</span>
+                </header>
+
+                <div>
+                    
+
+					<br>
+                    <!-- 新增公告 -->
+									<h2>新增公告</h2>
+
+									<form id="addpost" method="post" action="">
+										<div class="row gtr-uniform">
+
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="username" id="username" value="" placeholder="上傳員工姓名" readonly/>
+											</div>
+
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="postdate" id="postdate" value="" placeholder="上傳日期" readonly/>
+											</div>
+											
+											<div class="col-12 col-12-xsmall">
+												<input type="text" name="postwhat" id="postwhat" value="" placeholder="公告標題" />
+											</div>
+											
+											<input type="hidden" name="adminmemberid" id="adminmemberid" value="your_initial_value_here" />
+											
+											<div class="col-12">
+												<textarea name="words" id="words" placeholder="輸入公告" rows="6"></textarea>
+											</div>
+											
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="發送公告" class="primary" /></li>
+													<li><input type="reset" value="重新輸入" /></li>
+                                                        <li><a href="/clearSession" class="button large">登出帳號</a></li>
+                                                    
+												</ul>
+											</div>
+										</div>
+									</form>
+
+									<hr />
+
+									<h2>查詢公告</h2>
+                                    <input type="text" id="searchInput" placeholder="輸入關鍵字查詢" /><br>
+								    <button id="searchButton">搜尋</button><br>
+									
+                            <div class="table-wrapper">
+                                <table class="alt">
+                                    <thead>
+                                        <tr>
+                                            <th>公告編號</th>
+                                            <th>員工編號</th>                                      
+                                            <th>上傳員工</th>
+                                            <th>公告標題</th>
+                                            <th>公告內容</th>
+                                            <th>公告上傳時間</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                        <tbody id="shareDataBody"></tbody>
+                                    
+                                </table>
+                            </div>
+
+                            <hr />
+
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+            </article>
+
+
+			<div id="callDialog" title="聯絡方式">
+				<p>聯絡方式如下</p>
+			  </div>
+			  
+            <!-- Copyright -->
+            <div id="copyright">
+                <ul>
+                    <li>&copy; Untitled</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+		<script>
+			$(document).ready(function() {
+				$("#postdate").val(moment().format("YYYY-MM-DD"));
+				
+			});
+		</script>		
+        <script src="assets3/js/jquery.min.js"></script>
+        <script src="assets3/js/jquery.scrollex.min.js"></script>
+        <script src="assets3/js/jquery.scrolly.min.js"></script>
+        <script src="assets3/js/browser.min.js"></script>
+        <script src="assets3/js/breakpoints.min.js"></script>
+        <script src="assets3/js/util.js"></script>
+        <script src="assets3/js/main.js"></script>
+        <script src="assets3/js/updateTime.js"></script>
+		<script src="assets3/js/whatFix.js"></script>
+        <script src="assets3/js/search.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </div>
+</body>
+
+</html>

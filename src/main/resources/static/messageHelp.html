@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>後台-訊息及檢舉</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="assets3/css/main.css" />
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+        
+	</head>	
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <img src="images/logo.jpg" alt="LOGO" style="max-width: 100%; max-height: 100%;"/>
+        </header>
+        <nav id="nav">
+			<ul class="links">
+				<li><a href="adminAccount.html">當前登入</a></li>
+				<li><a href="addAdmin.html">新增員工</a></li>
+				<li><a href="adminFix.html">員工管理</a></li>
+				<li><a href="whatFix.html">公告管理</a></li>
+				<li><a href="helperFix.html">小幫手管理</a></li>
+				<li><a href="storeFix.html">商家管理</a></li>
+				<li><a href="shareFix.html">心得管理</a></li>
+				<li><a href="storeCVFix.html">職缺管理</a></li>
+				<li class="active"><a href="messageHelp.html">檢舉信管理</a></li>
+			</ul>
+		</nav>
+        <div id="main">
+            <article id="" class="post featured">
+                <header>
+                    <h2>查看所有來信資訊</h2>
+                    <span class="date" id="currentDateTime">April 25, 2017</span>
+                </header>
+                <div>
+                    <input type="text" id="searchInput" placeholder="輸入關鍵字查詢" /><br>
+                    <button id="searchButton">搜尋</button><br>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>來信編號</th>
+                                    <th>聯絡方式</th>
+                                    <th>詳細內容</th>
+                                    <th>回信</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messageData">
+                                <!-- Message data will be added here dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr/>
+                </div>
+                <ul class="actions special">
+                    <li><a href="/clearSession" class="button large">登出帳號</a></li>
+                </ul>
+            
+            </article>
+            
+			
+            <div id="contextDialog" title="詳細內容" style="display: none;">
+                <p>聯絡方式如下</p>
+            </div>
+            <div id="replyDialog" title="回信" style="display: none;">
+                <p>以下為工作需求時間</p>
+            </div>
+        </div>
+        <div id="copyright">
+            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div>
+    </div>
+    <script src="assets3/js/jquery.min.js"></script>
+    <script src="assets3/js/jquery.scrollex.min.js"></script>
+    <script src="assets3/js/jquery.scrolly.min.js"></script>
+    <script src="assets3/js/browser.min.js"></script>
+    <script src="assets3/js/breakpoints.min.js"></script>
+    <script src="assets3/js/util.js"></script>
+    <script src="assets3/js/main.js"></script>
+    <script src="assets3/js/updateTime.js"></script>
+    <script src="assets3/js/MessageHelp.js"></script>
+    <script src="assets3/js/search.js"></script>
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+</html>

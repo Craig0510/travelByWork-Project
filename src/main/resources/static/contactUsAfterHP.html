@@ -1,0 +1,184 @@
+
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>打工換宿趣-聯絡我們</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="homePage">打工換宿趣</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>選單</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="homePageAfterHP.html">首頁</a></li>
+											<li><label>歡迎回來<span id="usernameAfterLogin"></span></label></li>
+											<li><a href="helperAccountAfter.html">我的小幫手資料</a></li>
+											<li><a href="whatAfterHP.html">公告</a></li>	
+											<li><a href="postJobAfterHP.html">查看換宿店家</a></li>
+											<li><a href="shareAfterHP.html">分享經驗</a></li>									
+											<li><a href="contactUsAfterHP.html">聯絡我們</a></li>
+											<!-- 登出按鈕 -->
+											<li><a href="clearSession">登出</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+				<article id="main">
+					<header>
+						<h2>客服中心</h2>
+						<p>聯絡我們，我們將儘速協助您</p>
+					</header>
+					<section class="wrapper style5">
+						<div class="inner">
+
+
+							<section>
+								<h4>來自</h4>
+								<form method="post" action="#" id="contact">
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="demo-name" id="demo-name" value="" placeholder="怎麼稱呼您" />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="demo-email" id="demo-email" value="" placeholder="請填入你的Gmail" />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<select name="contacttype" id="contacttype">
+												<option value="" disabled selected hidden>*請選擇檢舉內容</option>
+												<optgroup label="--問題內容--">
+												<option value="檢舉店家職缺">檢舉店家職缺</option>
+												<option value="檢舉心得分享">檢舉心得分享</option>
+												<option value="意見分享">意見分享</option>
+												<option value="給予我們鼓勵">給予我們鼓勵</option>
+												<option value="其他">其他</option>
+												
+											</select>
+										</div>
+
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="contactdate" id="contactdate" value="" placeholder="聯絡日期" readonly />
+										</div>
+										
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="demo-copy" name="demo-copy">
+											<label for="demo-copy">傳送一封副本給我</label>
+										</div>
+
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="demo-human" name="demo-human" checked>
+											<label for="demo-human">我不是機器人</label>
+										</div>
+										<div id="check"></div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="輸入內容" rows="6"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="確認送出" class="primary" /></li>
+												<li><button id="reset-button" type="button">重設</button></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+
+
+							
+						</div>
+					</section>
+				</article>	
+				
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/groups/548556241854157/" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+						<li><a href="contactUsAfterHP.html" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>		
+							<script>
+								$('#contact').submit(function (evt) {
+									check(evt);
+								});
+							
+								function check(evt) {
+									evt.preventDefault();
+									var copy = document.getElementById("demo-copy");
+									var human = document.getElementById("demo-human");
+									if (human.checked) {
+										sendContext();
+										if (copy.checked) {
+											sendCopy();
+										}
+									} else {
+										$('#check').html('<h4 style="color: red">!!</h4>');
+									}
+								}
+							
+								// 獲取當前日期
+								var today = new Date();
+								var year = today.getFullYear();
+								var month = String(today.getMonth() + 1).padStart(2, '0');
+								var day = String(today.getDate()).padStart(2, '0');
+								var formattedDate = year + '-' + month + '-' + day;
+							
+								// 將當前日期設定為日期欄位的值
+								document.getElementById('contactdate').value = formattedDate;
+							
+								// 處理自訂的重設按鈕點擊事件
+								$('#reset-button').click(function () {
+									// 將儲存的日期重新設定為日期欄位的值
+									document.getElementById('contactdate').value = formattedDate;
+							
+									// 避免清空其他欄位
+									$('#demo-name').val(''); // 清空怎麼稱呼您欄位
+									$('#demo-email').val(''); // 清空請填入你的Gmail欄位
+									$('#contacttype').prop('selectedIndex', 0); // 還原選擇檢舉內容欄位
+									$('#demo-copy').prop('checked', false); // 取消傳送一封副本給我選項
+									$('#demo-human').prop('checked', true); // 還原我不是機器人選項
+									$('#message').val(''); // 清空輸入內容欄位
+									$('#check').empty(); // 清空錯誤訊息
+								});
+							</script>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/ContactUs.js"></script>
+			<script src="assets/js/getHelperMember.js"></script>
+	</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>小幫手資料</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets1/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+
+		<!-- logo -->
+		<link rel="icon" type="images/jpeg" href="images/logo.jpg" /> 
+
+		<style>
+			/* 更改資料欄位 */
+			.col-8 input,
+			.col-10 input {
+				width: 100%; /* 寬 */
+			}
+			
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="helperAccountHome.html" class="icon solid fa-home"><span>個人資料</span></a>
+						<a href="helperAccountWork.html" class="icon solid fa-folder"><span>履歷</span></a>
+						<a href="helperAccountContact.html" class="icon solid fa-envelope"><span>已投遞店家</span></a>
+						<a href="helperAccountShareMe.html" class="icon fa-solid fa-heart"><span>分享心得</span></a>
+					</nav>
+<!-- Main -->
+<div id="main">
+
+    <!-- Contact -->
+    <article id="contact" class="panel">
+        <header>
+            <h2>收藏工作</h2>
+        </header>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>已收藏店家</th>
+                    <th>開始日期</th>
+                    <th>結束日期</th>
+                    <th>收藏人數</th>
+                    <th>取消收藏</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tbody id="helperjob"></tbody>
+                
+            </tbody>
+        </table>
+
+        
+
+    </article>
+
+
+
+<!-- share -->
+        <article id="shareMe" class="panel">
+            <header>
+                <h2>心得分享</h2>
+            </header>
+
+            <form id="addShareForm" action="" method="post">
+
+                <div>
+                    <div class="row">
+
+                        <div class="col-6 col-12-medium">
+                            <input type="text"  id="usernameAddForm" name="username" value="" placeholder="暱稱" readonly/>
+                        </div>
+                        <input type="hidden" id="accountAddForm">
+                        <input type="hidden" id="memberIdAddForm">
+
+                        <div class="col-6 col-12-medium">
+                            <select name="worktype" id="worktype" required>
+                                <option value="" disabled selected hidden>*請選擇工作行業別</option>
+                                <option value="restuarant">餐廳</option>
+                                <option value="hostol">民宿</option>
+                                     <option value="bistro">酒吧</option>
+                                     <option value="divestore">潛店</option>
+                                     <option value="ohmiyaga">名產店</option>
+                                     <option value="farm">農場</option>
+                                     <option value="coffeeshop">咖啡廳</option>
+                                     <option value="brunch">早餐/早午餐</option>
+                                     <option value="drink">飲料店/果汁店</option>
+                                     <option value="handmake">手作商店</option>
+                                     <option value="others">其他</option>
+                              </select>
+                        </div>
+
+                        <div class="col-6 col-12-medium">
+                            <input type="text" name="startdate" id="startdate" value="" placeholder="*換宿時間（起）" required/>
+                               <input type="date" id="startDatePicker" style="display: none;" required/><br>
+                        </div>
+
+                        <div class="col-6 col-12-medium">
+                            <input type="text" name="enddate" id="enddate" value="" placeholder="*換宿時間（訖）" required/>
+                               <input type="date" id="endDatePicker" style="display: none;" required/><br>
+                        </div>
+
+                        <div class="col-6 col-12-medium">
+                            <select name="place" id="place" required>
+                            <option value="" disabled selected hidden>*請選擇工作地點</option>
+                            <optgroup label="--北部--">
+                            <option value="Taipei">台北</option>
+                            <option value="NewTaipei">新北</option>
+                            <option value="Keelung">基隆</option>
+                            <option value="Taoyuan">桃園</option>
+                            <option value="Hsinchu">新竹</option>
+                            </optgroup>
+                            <optgroup label="--中部--">
+                            <option value="Miaoli">苗栗</option>
+                            <option value="Taichung">台中</option>
+                            <option value="Changhua">彰化</option>
+                            <option value="Nantou">南投</option>
+                            <option value="Yunlin">雲林</option>
+                            </optgroup>
+                            <optgroup label="--南部--">
+                            <option value="Chiayi">嘉義</option>
+                            <option value="Tainan">台南</option>
+                            <option value="Kaohsiung">高雄</option>
+                            <option value="Pingtung">屏東</option>
+                            </optgroup>
+                            <optgroup label="--東部--">
+                            <option value="Hualien">花蓮</option>
+                            <option value="Taitung">台東</option>
+                            </optgroup>
+                            <optgroup label="--離島--">
+                            <option value="Penghu">澎湖</option>
+                            <option value="Kinmen">金門</option>
+                            <option value="Matsu">馬祖</option>
+                            <option value="Xiaoliuqiu">小琉球</option>
+                            <option value="GreenIsland">綠島</option>
+                            <option value="Lanyu">蘭嶼</option>
+                            <option value="Guishan">龜山島</option>
+
+                            </optgroup>	
+                        </select>	
+                    </div>	
+
+
+                        <div class="col-6 col-12-medium">
+                            <input type="text" name="storename" value="" placeholder="*店家名稱（可部分隱藏）" required/>
+                        </div>
+
+
+                        <div class="col-6 col-12-medium">
+                            <select name="grade" id="grade" required>
+                                <option value="" disabled selected hidden>*推薦換宿指數</option>
+                                <option value="one">1分 非常差勁</option>
+                                <option value="two">2分 有待改善</option>
+                                     <option value="three">3分 一般水準</option>
+                                     <option value="four">4分 表現尚可</option>
+                                     <option value="five">5分 達及格線</option>
+                                     <option value="six">6分 及格</option>
+                                     <option value="seven">7分 高於平均水準</option>
+                                     <option value="eight">8分 高度評價</option>
+                                     <option value="nine">9分 非常出色</option>
+                                     <option value="ten">10分 超出想象的優</option>
+                                     <option value="whatthefuck">不予置評/不建議</option>
+                              </select>
+                        </div>
+
+                    
+                        <div class="col-6 col-12-medium">
+                            <input type="text" name="updatedate" id="updatedate" value="" placeholder="心得上傳日期" readonly required/><br>
+                        </div>
+
+
+                        <div class="col-12">
+                            <textarea name="workdetail"  placeholder="*工作內容" rows="6"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <textarea name="content"  placeholder="*換宿心得" rows="6"></textarea>
+                        </div>
+
+                        <div class="align-center ">
+                        <input type="submit" value="分享心得" style="font-size:20px;"> 
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </article>
+
+</div>
+					
+    <br>
+    
+    <ul class="actions">
+    <li><a href="homePageAfterHP.html" class="button active">返回首頁</a></li>
+    </ul>
+    
+    
+
+<!-- Footer -->
+    <div id="footer">
+        <ul class="copyright">
+            <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets1/js/jquery.min.js"></script>
+<script src="assets1/js/browser.min.js"></script>
+<script src="assets1/js/breakpoints.min.js"></script>
+<script src="assets1/js/util.js"></script>
+<script src="assets1/js/main.js"></script>
+<script src="assets1/js/helperAccountHome.js"></script>
+
+
+
+
+
+
+</body>
+</html>
